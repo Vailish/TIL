@@ -1,29 +1,24 @@
-# Git
+# Git, Github
 
+### Git & Github
 
-
-
-
-##### 복습 중 추가할 내용
-
-- 중앙집중식 대표 프로그램 - ex) SVN / 예전에는 많이 썼지만 요즘은 잘 안씀
-- commit -> commits // 단계
-- status : "3공간"의 상태
-- git log : version(commit)의 상태
-
----
+- Git : 분산 버전 관리 프로그램 - 데이터 보존에 유리(<->- 중앙집중식, ex) SVN / 예전에는 많이 썼지만 요즘은 잘 안씀
+)
+  - **백업+복구+협업** : 육하원칙으로 정리해주니까 협업이 가능해짐 - 단/ 이유파트는 사람이 직접!
+    - 백업 : add, commit
+    - 복구 : reset, revert
+    - 협업 : push, pull, clone, branch, merge
+  - Git /= Github
+    - Github는 Git을 사용하는 저장소 즉, Git 내pc Github
 
 ##### Git을 하면서 많이 하는 실수
 
 - submodule : git 속 git 
   - git 관리하는 폴더 안에 다른 폴더를 만들어서 git을 또 init 하는 경우
-  - 현업에서도 잘 사용 안 하는 어려운 내용, 언젠가 에러가 날 수 있음\
+  - 현업에서도 잘 사용 안 하는 어려운 내용, 언젠가 에러가 날 수 있음
 - 바탕화면에서 여는 경우 
 - Github 안에서 파일 드래그해서 올리는 경우
   - 먼저 이렇게 수정하면,  working direction이랑 github랑 버전이 달라서 오류가남.
-- Typora는 업데이트하면 유료버전, beta버전만 무료
-
-
 
 ##### README.md & .gitignore
 
@@ -39,7 +34,9 @@ git and readme
   - VSC에서 아이콘 붙여줘서 특수파일임을 분류해줌. - README.md도 마찬가지
   - gitignore.io : 여기에서 사용할 프로그램을 입력해주면 알아서 쓰레기파일 등 ignore할 것을 작성해줌 ex) python, windows, Visual Studio Code  처럼 입력해주면 됨.
 
-
+##### Git
+- status : "3공간"의 상태
+- git log : version(commit)의 상태
 
 ##### Clone & Pull
 
@@ -85,45 +82,3 @@ git and readme
 - branch & merge : 협업 규모가 커지면 이를 이용하여 처리함
 
   - push & pull 같은 경우에는 개인, 혹은 소규모일 때 유용함.
-
-
-
-##### commit convention message
-
-- 넷상에 검색에서 검색해서 규칙 정할 필요가 있음 <- 정리하는 법 배우면 좋을듯!
-- 회사나 조직에 따라서 다 다르게 정의 할 수 있기때문에 유동적으로 하면됨
-
----
-
-### python
-
-##### python Visual Studio Code 팁
-
-- tab : 터미널에서 일정량 친 후에 텝 누르면 파일이름 자동 입력 해줌
-- 방향키 : 사용했던 명령어 그대로 복사
-- import random : random이라는 모듈 안에서
-
-
-
-##### Chat bot
-
-- **요청과 응답**
-
-  ​                                                  요청 - API를 사용한 소통
-
-  - 클라이언트(정보를 원하는) 와 서버(정보를 주는) 
-
-    ​                                             응답 - 문서(HTML)
-
-  - API 두 소프트웨어가 서로 통신할 수 있도록 연결 시켜주는 인터페이스(접점)
-
-    - ex) 음식점에서 클라이언트와 서버, 그리고 메뉴판
-
-  - http://apis.data.go.kr : 공공데이터 관리 사이트
-
-    - 웹 크롤링 할때 좋음, 웹 크롤링 : 데이터를 긁어와서 필요한 정보 뽑아내는 것
-
-  - 파이썬 챗봇 [파이썬 챗봇 (hphk.io)](https://py.hphk.io/) : 텔레그램 계정 연결
-
-
-

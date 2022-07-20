@@ -1,9 +1,3 @@
-**2022.07.14. TIL**
-
-# Git, Github, Markdown(by Typora).
-
----
-
 ### markdown
 
 * Markdown : 텍스트 기반의 경량 마크업 언어 / Typora로 실습 - 표작업에있어 특화
@@ -62,15 +56,3 @@
 * markdown 문법에서 글씨의 크기를 키우고 싶다고해서 본문을 제목으로 지정하면 안된다
 
   * markdown은 글에 역할을 부여하지, 디자인은 아니다.
-
----
-
-### Git & Github
-
-- Git : 분산 버전 관리 프로그램 - 데이터 보존에 유리(<->중앙집중식)
-  - **백업+복구+협업** : 육하원칙으로 정리해주니까 협업이 가능해짐 - 단/ 이유파트는 사람이 직접!
-    - 백업 : add, commit
-    - 복구 : reset, revert
-    - 협업 : push, pull, clone, branch, merge
-  - Git /= Github
-    - Github는 Git을 사용하는 저장소 즉, Git 내pc Github
