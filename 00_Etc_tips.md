@@ -12,6 +12,7 @@
     - tab : 터미널에서 일정량 친 후에 텝 누르면 파일이름 자동 입력 해줌
     - 방향키 : 사용했던 명령어 그대로 복사
     - import random : random이라는 모듈 안에서
+    - ctrl / : 주석처리
 
 
 ##### commit convention message

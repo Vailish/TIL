@@ -104,7 +104,7 @@ print(x, y) #20, 10
 - 삼중 따옴표(Triple Quotes)
   - ''' '''
 - Escape sequence
-  - \n : 줄바꿈
+  - \n : 줄바꿈, *개행*이라고 부름
   - \t : 탭
   - \r : 캐리지 리턴(커서를 제일 앞으로)
   - \0 : Null
