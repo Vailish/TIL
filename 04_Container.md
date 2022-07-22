@@ -29,6 +29,52 @@
    - list_d = [1, 2, 3, ['aaaa', 'bbbbbb', 'cccccc']]
      b->z로 바꾸는건 안됨 why? 문자열, 바꾸려면 bbbbbb를 통째로 변경해야함
 
+##### 이차원 리스트
+- 이차원 리스트는 리스트를 원소로 가지는 리스트일 뿐이다. <- 행렬이다
+ex)
+```python
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(matrix[0][2]) # 2
+
+matrix = [
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9] 
+]
+
+matirx = [
+  [1, 2, 3, 4] #행 우선 순회
+  [5, 6, 7, 8]
+  [9, 0, 1, 2]
+  #열 우선 순회
+]
+
+# 이중 for문을 이용한 행 우선 순회
+for i in range(3): #행
+  for j in range(4): #열
+    print(matrix[i][j], end=" ")
+  print()
+'''
+1 2 3 4
+5 6 7 8
+9 0 1 2
+'''
+# 열 우선 순회인 경우 (i와 j만 바꾸면돠미)
+'''
+1 5 9
+2 6 0
+3 7 1
+4 8 2
+'''
+
+#이 상태에서 다 더하면 됨, 모든 수의 합.
+matrix = [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]]
+total = sum(map(sum, matrix))
+#sum([4, 4, 4]) -> 12
+#sum 대신에 max와 min을 써서 최대랑 최소도 정해줄 수 있음
+
+```
+
 #### 튜플(tuple)
 - 여러 개의 값을 순서가 있는 구조로 저장하고 싶을 때 사용
 - 리스트와의 차이점 : 생성 후, 담고 있는 값 변경이 불가(불변 자료형)
@@ -99,6 +145,8 @@
   - dict_a = dict('a'='apple') X -> dict(a='apple') 이런식으로 규칙을 지켜줘야함.
 - ex) ['a' : 'apple, 'list' : [1, 2, 3]]
 - key로 부를때, dic_key[a]이런식으로함, ()가 아닌[]임
+  - dic.get()로 불러와도 됨, 차이점은 key 가 없더라도 default 값으로 none이 들어있어서 오류 안나게 할 수 있으며
+  - (key값, none)에서 none 자리를 바꿔주면 key가 없을 시 반환값을 바꿀 수 있음.
 - ex) list 안에 dictionary 안에 dictionary 
 ```python
 air_info = [{'name' : 'A', 'capital' : True, 'air_status' : {'O2' : 3, 'CO2' : 2}}, {'name' : 'B', 'capital' : False, 'air_status' : {'O2' : 5, 'CO2' : 3}}]
