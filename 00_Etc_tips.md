@@ -1,18 +1,24 @@
-##### 기타팁
+# 기타팁
+### VSC Tip
+- 단축키
+  - ctrl alt 화살표 : 동시선택
+  - alt click : 동시선택
+  - alt 화살표 : 줄이동
+  - tab : 터미널에서 일정량 친 후에 텝 누르면 파일이름 자동 입력 해줌
+  - 방향키 : 사용했던 명령어 그대로 복사
+  - import random : random이라는 모듈 안에서
+  - ctrl / : 주석처리  
+- 기타 방법
+  - setting -> "format" -> Editor, Format on save : 저장시 자동 정렬
+
 - window + E : 폴더 열기
 - jupyter notebook 단축기 만들기
   - 기본 : git bash -> jupyter notebook 입력
   - 별명(단축키, alias) 설정 git bash -> jp 입력
     - git bash -> code ~/. bashrc -> VSC로 이동됨 -> alias jp="jupyter notebook" 입력후 저장 -> git bash로 이동 -> source ~/. bashrc 입력 -> jp 입력 -> 이제 jp 입력할때마다 실행됨.
   - 필요한 거 있을 때 "jp"랑 "jupyter notebook" 자리에 맞춰서 넣으면 단축키 설정 가능함!
-  - VSC 팁
-    - ctrl alt 화살표 : 동시선택
-    - alt click : 동시선택
-    - alt 화살표 : 줄이동
-    - tab : 터미널에서 일정량 친 후에 텝 누르면 파일이름 자동 입력 해줌
-    - 방향키 : 사용했던 명령어 그대로 복사
-    - import random : random이라는 모듈 안에서
-    - ctrl / : 주석처리
+    
+  
 
 
 ##### commit convention message

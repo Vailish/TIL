@@ -31,6 +31,7 @@
 
 ##### 이차원 리스트
 - 이차원 리스트는 리스트를 원소로 가지는 리스트일 뿐이다. <- 행렬이다
+- pprint() <- 예쁘게 출력해줌(가독성 있게) : 2차원 list나 dictionary 등
 ex)
 ```python
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -152,6 +153,7 @@ total = sum(map(sum, matrix))
 air_info = [{'name' : 'A', 'capital' : True, 'air_status' : {'O2' : 3, 'CO2' : 2}}, {'name' : 'B', 'capital' : False, 'air_status' : {'O2' : 5, 'CO2' : 3}}]
 print(air_info)
 ```
+
 
 #### 형 변환(Typecasting)
 - 파이썬에서 데이터 형태는 서로 변환 가능
