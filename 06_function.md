@@ -281,6 +281,58 @@ map(int, input().split)
 - zip
   - zip(*iterables)
   - 세로로 묶는다!
+- split
+  - 문자열.split(sep = '구분자', maxsplit = 분할횟수) <-sep, maxsplit은 생략가능
+    - 구분자를 기준으로 분할횟수만큼 잘라서 리스트로 만든다!
+  - ex1)
+```python
+orders = '아이스아메리카노,카라멜마키야또,에스프레소,아메리카노,아메리카노,아이스라떼,핫초코,아이스아메리카노,아메리카노,아이스카라멜마키야또,아이스라떼,라떼마키야또,카푸치노,라떼마키야또'
+
+coffee = orders.split(',')
+print(len(coffee))  # 14잔
+coffee.sort(reverse=True)
+
+a = list(set(coffee))
+a.sort(reverse=True)
+print(a)
+```
+  - ex2) input에 123 넣는 경우
+  - split의 여부에 따라 띄어쓰기 차이가 생김.
+```python
+a, b, c = map(int, input().split()
+#1 2 3
+a, b, c = map(int, input())
+#123
+```
+
+- print
+  - print("문자열", sep 옵션, end 옵션)
+    - sep 옵션 : 출력할 때 출력 값들 사이에 넣어줄 구분자. dafault = 개행(줄바꿈)
+    - end 옵션 : 출력할 떄 출력 값들 사이에 넣어줄 구분자. dafault = 공백(띄어쓰기)
+  - 출력하고 싶은 문자열(=데이터)을 출력!
+  - ex)
+```python
+a = 'happy'
+b = 'hacking'
+
+print(a, end="@") #default 값은 '\n'
+print(b)
+#happy@hacking
+
+print(a, b) sep = "\n" #default 값은 ','    
+'''
+happy
+hacking
+'''
+print(a, b, c) = map(int, input().split())
+>>>1 2 3
+print(a, b, c, sep='&', end='!')
+# 1&2&3!
+```
+- ascii 아스키 문자 내장함수
+  - ord() 문자 -> 숫자
+  - chr() 숫자 -> 문자
+
 @@@@@@@@@@@@137
 - **람다(lambda) 함수**
   - 익명함수, 한 줄로 간단하게 함수를 표현

@@ -169,3 +169,17 @@ print(x, y) #20, 10
       print(0 and True) #0
       print(3 and 5) #5
       평가해서 True False 값은 따지지만, 나와있는 거에 따라서 숫자냐 True False냐가 갈림
+- ex)
+```python
+3 is True # F
+not None # T
+3 is not None # T 연산자 우선순위로 인해 is not이 묶임
+bool (3) == True # T
+1 == True
+
+a = ['zero', 'one']
+a[False] #'zero'
+a[True] #'one'
+a[False + 1] #'one'
+```
+is 는 완전 같은것, ==은 동등한 위치인것

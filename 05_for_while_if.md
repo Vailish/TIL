@@ -251,3 +251,18 @@ else:
   - 아무것도 하지 않음(문법적으로 필요하지만, 할 일이 없을 때 사용)
   - 반복문 아니어도 사용 가능
   - ex)
+
+# 응용
+- a를 모두 제거하라!
+```python
+word = list(input())
+k = 0
+for n in range(len(word)):
+    if word[n] == 'a':
+        k = k + 1
+while k != 0:
+    word.remove('a')
+    k = k - 1
+
+print(''.join(word))
+```

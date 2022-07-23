@@ -28,6 +28,15 @@
  - 문자열 불변
    - list_d = [1, 2, 3, ['aaaa', 'bbbbbb', 'cccccc']]
      b->z로 바꾸는건 안됨 why? 문자열, 바꾸려면 bbbbbb를 통째로 변경해야함
+ - list를 사용하여 count처럼 사용하기
+   - ex)
+ ```python
+numbers = [7, 17, 10, 5, 4, 3, 17, 5, 2, 5]
+
+a= len([number[i] for i in range(len(numbers)) if numbers[i] == 5])
+print(a)
+## 5제외
+```
 
 ##### 이차원 리스트
 - 이차원 리스트는 리스트를 원소로 가지는 리스트일 뿐이다. <- 행렬이다
@@ -194,3 +203,18 @@ print(air_info)
       - 본체가 아닌 **새로운 정렬된 리스트**를 만들어 반환
       - key 파라미터는 정렬의 기준값
 - https://blockdmask.tistory.com/466
+
+##### join
+
+- 기능 : 매개변수로 들어온 리스트에 있는 요소 하나하나를 합쳐서 하나의 문자열로 바꾸어 반환.
+  - ex1) ''.join['a', 'b', 'c'] -> 'abc'
+  - ex2) '_'.join(['a', 'b', 'c']) -> 'a_b_c'
+- 형식 : '구분자'.join(list)
+- 
+- ex)
+```python
+print(''.join[1, 2, 3, 4, 5]) # 12345
+
+list = [1, 2, 3, 4, 5]
+print(''.join(map(str, list)))  # 12345
+```
