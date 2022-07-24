@@ -278,9 +278,27 @@ map(int, input().split)
   
 - filter
   - filter(function, iterable)
+  - iterable한 녀석들을 함수에 다 넣어서 True인 것들을 filter object로 반환
+  - ex)
+```python
+def odd(n):
+  return n % 2
+numbers = [1, 2, 3]
+result = filter(odd, numbers)
+print(result, type(result)) #<filter object at ~> <class 'filter'>
+print(list(result)) #[1, 3]
+```
 - zip
   - zip(*iterables)
   - 세로로 묶는다!
+  - ex)
+```python
+girls = ['jane', 'ashley']
+boys = ['justin', 'eric']
+pair = zip(girls, boys)
+print(pair, type(pair)) #<zip object at ~> <class 'zip'>
+print(list(pair)) #[('jane', 'justin), ('ashley', 'eric')]
+```
 - split
   - 문자열.split(sep = '구분자', maxsplit = 분할횟수) <-sep, maxsplit은 생략가능
     - 구분자를 기준으로 분할횟수만큼 잘라서 리스트로 만든다!
@@ -333,7 +351,6 @@ print(a, b, c, sep='&', end='!')
   - ord() 문자 -> 숫자
   - chr() 숫자 -> 문자
 
-@@@@@@@@@@@@137
 - **람다(lambda) 함수**
   - 익명함수, 한 줄로 간단하게 함수를 표현
   - lambda[parameter] : 표현식
@@ -348,11 +365,9 @@ print(a, b, c, sep='&', end='!')
 ```python
 minus_two = lambda x: x -2 # 변수안에 함수를 넣어서
 result = minus_two(5) # 변수를 이용해서 함수를 호출하는 모양으로 사용가능
-print(result)
-# 3
-minus_numbers = list(map(lambda xL x-2, [5, 6])) # map 안에 함수인자에 람다함수를 넣어서 사용할 수 있음.
-print(minus_numbers)
-# [3, 4]
+print(result) # 3
+minus_numbers = list(map(lambda x : x-2, [5, 6])) # map 안에 함수인자에 람다함수를 넣어서 사용할 수 있음.
+print(minus_numbers) # [3, 4]
 ```
 - **재귀 함수(recursive function)**
   - 자기 자신을 호출하는 함수로, 자기 자신을 호출하며 점점 깊게 들어감
@@ -367,8 +382,21 @@ print(minus_numbers)
     - 무한루프가되니까 종료조건이 필요하다. <- 아니면 무한루프 하다가 오류남, 파이썬에서는 최대 재귀 깊이는 1000으로 제한됨.
     - 그럼 왜 쓰냐? <- 더 직관적이고 비교적 식이 간결하기 때문, 대신 이해하기 비교적 어려움
   - 1개 이상의 base case(종료되는 상황)가 존재하고, 수렴하도록 작성
-  - ex)
-  - 
+  - ex) factorial
+    4! = 4 * 3! = 4 * 3 * 2 * 1
+    3! = 3 * 2! = 3 * 2 * 1
+    2! = 2 * 1 = 2
+    1! = 1
+
+    f(4) = 4 * f(3)
+    f(3) = 3 * f(2)
+    f(2) = 2 * f(1)
+    f(1) = 1 <- base case(끝나는 곳에) 수렴>
+  - 반복문 VS 재귀함수
+    - 알고리즘 자체가 재귀적인 표현이 자연스러운 경우 재귀함수 사용
+    - 재귀 호출은 변수 사용을 줄여줄 수 있음
+    - 재귀 호출은 입력 값이 커질 수록 연산 속도가 오래걸림
+
 
 ### 기타tip
 ##### palindrome
