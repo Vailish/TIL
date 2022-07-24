@@ -5,10 +5,10 @@
  - 순서가 있는 데이터 (Ordered) vs 순서가 없는 데이터(Unordered)
    - 순서가 있다(저장순서) != 정렬되어있다
    - 순서가 없는 데이터 : 관계, 팔로우 같은 내용
- - 컨테이너
+ - **컨테이너**
    - 시퀀스형(sequence, 순서가 있는) : ex) a[1]
-     - 리스트 - 가변형
-     - 튜플 - 불변형
+     - 리스트 - 가변형(mutable)
+     - 튜플 - 불변형(immutable)
      - 레인지 - 불변형
      - *문자열* - 불변형
    - 비시퀀스형(non-sequence)
@@ -176,12 +176,12 @@ for i in range(4):
 
 #### 딕셔너리(Dictionary)
 - 키-값(key-value) 쌍으로 이루어진 자료형(python3.7부터 ordered(정확히는 순서보정정도), 이하 버전은 unordered)
-- key : 변경 불가한 데이터(immutable)만 활용가능
+- key : 변경 불가한 데이터(immutable - 문자열, tuple, range)만 활용가능
   - ex) string, integer, float, boolean, tuple, range
 - value : 모든 데이터 가능
 - {}, dict() <- key를 통해 value에 접근
   - dict_a = dict('a'='apple') X -> dict(a='apple') 이런식으로 규칙을 지켜줘야함.
-- ex) ['a' : 'apple, 'list' : [1, 2, 3]]
+- ex) {'a' : 'apple', 'list' : [1, 2, 3]}
 - key로 부를때, dic_key[a]이런식으로함, ()가 아닌[]임
   - dic.get()로 불러와도 됨, 차이점은 key 가 없더라도 default 값으로 none이 들어있어서 오류 안나게 할 수 있으며
   - (key값, none)에서 none 자리를 바꿔주면 key가 없을 시 반환값을 바꿀 수 있음.

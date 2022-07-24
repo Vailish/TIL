@@ -157,7 +157,6 @@ print_family_name('아부지', '어무이', '멍멍이', '냥냥이')
   - 몇 개의 키워드 인자를 받을지 모르는 함수를 정의할 때 유용
   - **kwargs는 딕셔너리로 묶여 처리되며, parameter에 **를 붙여 표현
   - ex)
-
 ```python
 def family(**kwargs):
   for key, value in kwargs.items():
@@ -203,7 +202,6 @@ cat : 냥냥이
 '''
 ```
 
-@@@@@@161
 ##### 함수의 범위(Scope)
  - 특정 공간, 지역, **방**
  - 함수는 코드 내부에 local scope를 생성하며, 그 외의 공간인 global scope로 구분
