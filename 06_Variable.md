@@ -95,10 +95,16 @@ print(x, y) #20, 10
     
 ---
 
-### 문자열 자료형
-- 모든 문자는 str타입
+### 문자열
+- 문자들의 나열(sequence of charaters)
+- 모든 문자는 str 타입(변경 불가능한 immutable)
 - '', "" (묶을 때 동일 문장부호)
 - PEP8에서는 소스코드 내에서 하나의 문장부호를 선택하여 유지
+- ex)
+```python
+print('hello') # hello
+print(type('hello')) # <class 'str'>
+```
 - 중첩 따옴표
   - ' "" ', " '' "
 - 삼중 따옴표(Triple Quotes)

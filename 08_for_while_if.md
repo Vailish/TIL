@@ -253,7 +253,7 @@ else:
   - ex)
 
 # 응용, 문제풀이 팁
-- a를 모두 제거하라!
+- a를 모두 제거하라! **= 새로 a를 빼고
 ```python
 word = list(input())
 k = 0

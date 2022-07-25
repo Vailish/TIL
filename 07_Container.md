@@ -40,6 +40,7 @@ print(a)
 
 ##### 이차원 리스트
 - 이차원 리스트는 리스트를 원소로 가지는 리스트일 뿐이다. <- 행렬이다
+- 델타이동 : 게임처럼 한 칸씩 움직이는 것을 말함(상하좌우)
 - pprint() <- 예쁘게 출력해줌(가독성 있게) : 2차원 list나 dictionary 등
 ex)
 ```python
@@ -111,6 +112,36 @@ board = [[0] * 4 for _ in range(4)]
 board[1][2] = 1
 for i in range(4):
   print(board[i])
+
+#델타이동
+a = [
+  [0, 0, 0]
+  [0, 1, 0]
+  [0, 0, 0]
+]
+now = [1, 1]
+# 상
+# now[0] -= 1
+# now[1]
+# print(now) 하지만 반복은 아래와 같이하면됨
+
+#상하좌우
+dx = [-1, 1, 0, 0] #x행
+dy = [0, 0, -1, 1] #y열
+     #상,하,좌,우 (세로로 보면됨)
+# 상
+# now[0] += dx[0]
+# now[1] += dy[0]
+# print(now)
+
+for i in range(4):
+  now[0] += dx[i]
+  now[1] += dy[i]
+
+if now[0] <0, now[0] >= n or now[1] < 0 or now[1] >= n:
+  print('범위 벗어남')
+else:
+  print('정상범위')
 ```
 
 #### 튜플(tuple)
