@@ -22,12 +22,58 @@
     
   
 
-
 ##### commit convention message
 
 - 넷상에 검색에서 검색해서 규칙 정할 필요가 있음 <- 정리하는 법 배우면 좋을듯!
 - 회사나 조직에 따라서 다 다르게 정의 할 수 있기때문에 유동적으로 하면됨
 
+
+# API vs Json
+- API : **A**pplication **P**rograming **I**nterface
+- 브라우저: --요청(request, API)--> 서버
+  - Client <--응답(respond, Json)-- Server
+- source : ex) mnd, agify.io , naver api (네이버api 검색하면 오픈api를 얻을 수 있음), kakao api, etc..
+- mnd key 이건 지우자고 7135f382285b7a42b12f2513bd58adb1
+
+```python
+URL = 'https://dog.ceo/api/breeds/image/random'
+
+response = requests.get(URL).json() #.json : json 형태로온걸 딕셔너리 형태로 변환
+print(response)
+```
+
+##### in request module's method
+- 주소에 직접 입력 할 수 있는 것을 request를 이용하여 보내는 것임.
+  - 즉, 그냥 풀 주소를 써서 넣어도 됨, 같은 거
+- get : (서버에 있는) 데이터를 조회할때
+- post : (서버에 있는) 수정할때(ex) 댓글 생성 or 수정)
+- put : (서버에 있는) 수정
+- delete : (서버에 있는) 지우는 것(ex) 댓글 삭제, 회원 탈퇴 등)
+
+##### URL
+https://www.blabla.com/api/v1/movie/now_playing/?key=as535&name=user_name&region=korea
+프로토콜 / Base url / path(movie~now_playing) / parameter(?~) : key = value & k = v & ...이런 구조임 (처음 나오는 key는 사용자가 권한이 있는지 확인하는 것, 권한 없으면 안줌..)
+
+
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = a.extend(b)
+print(c) #None : 반환값... mutable
+
+a = 'abc'
+a.replace(z)
+print(a) #zbc : immutable
+
+if not users: <- 비어있는지 확인할 때는 이렇게 쓰자
+if len(users) == 0 <- 이렇게 쓰지말자
+
+1. 변수, 함수명은 의미있게 짓자.
+2. 변수, 함수명은 스네이크 케이스 / 클래스는 캐멀 케이스
+3. True/False evaluation -> 빈 컨테이너, ZBoolean 검사, 단 값은 무조건 그대로
+4. else가 필요없는 경우
+5. 중복된 코드는 함수로 묶자
+6. 복잡한 코드는 주석을 달자
 
 ##### cf) 컴퓨터는 시간을 어떻게 잴까?
 - datatime
