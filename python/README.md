@@ -2,14 +2,17 @@
 
 매일 배운 것을 정리하여 올리는 곳 입니다.
 
-### Index
-01. Etc tips
-02.  Git and Github
-03.  Markdown
-04.  Program
-05.  Python
-06.  Variable
-07.  container
-08.  for while if
-09.  function
-10.  module and package
+### python
+- Index
+01.  Python
+02.  Variable
+03.  container
+04.  for_while_if
+05.  function
+06.  module_and_package
+07.  Data_Structure
+08.  OOP
+
+### web
+01. HTML
+02. CSS
