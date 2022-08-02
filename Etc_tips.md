@@ -1,15 +1,16 @@
 # 기타팁
 ### VSC Tip
 - 단축키
-  - ctrl alt 화살표 : 동시선택
   - ctrl d : 동시에 선택된 모든 것 바꿀 수 있음
   - ctrl l : 터미널 초기화
+  - ctrl / : 주석처리
+  - ctrl x : 한 줄 잘라내기(그냥 지우기 용도로 편함)  
+  - ctrl alt 화살표 : 동시선택
   - alt click : 동시선택
-  - alt 화살표 : 줄이동
+  - alt 방향키 : 줄이동
+  - alt shift 방향키 : 복제
   - tab : 터미널에서 일정량 친 후에 텝 누르면 파일이름 자동 입력 해줌
-  - 방향키 : 사용했던 명령어 그대로 복사
   - import random : random이라는 모듈 안에서
-  - ctrl / : 주석처리  
 - 기타 방법
   - setting -> "format" -> Editor, Format on save : 저장시 자동 정렬
 
