@@ -8,8 +8,12 @@
     - 백업 : add, commit
     - 복구 : reset, revert
     - 협업 : push, pull, clone, branch, merge
-  - Git /= Github
+  - Git != Github
     - Github는 Git을 사용하는 저장소 즉, Git 내pc Github
+    - git
+      - Working Directory : 사용자의 작업영역 (add를 통해 staging area로 넘김)
+      - staging Area : commit을 위한 파일 및 폴더들이 위치하고 있는 영역(commit후 repository로 넘김)
+      - Repository : 저장된 파일이 있는 영역(push를 통해 깃허브에 넘김)
 
 ##### Git을 하면서 많이 하는 실수
 
