@@ -45,12 +45,11 @@ git and readme
 git 초기 설정
 
 - git config --global user.name "이름" : 커밋의 기록을 위한 username
-  
+
 - git congig --global user.email "메일 주소" : 커밋의 기록을 위한 username
   
 - 설정 확인법
-  
-
+- 
   - git config --global -l
 
   - git config --global --list
