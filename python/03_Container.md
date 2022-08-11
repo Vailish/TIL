@@ -130,19 +130,41 @@ now = [1, 1]
 dx = [-1, 1, 0, 0] #x행
 dy = [0, 0, -1, 1] #y열
      #상,하,좌,우 (세로로 보면됨)
+
+#x,y를 기준으로 하면
+#now[0],now[1]말고 nx, ny 이런식으로 변수 지정해줌
+
 # 상
 # now[0] += dx[0]
 # now[1] += dy[0]
-# print(now)
 
-for i in range(4):
+# 하
+# now[0] += dx[1]
+# now[1] += dy[1]
+
+# 좌
+# now[0] += dx[2]
+# now[1] += dy[2]
+
+# 우
+# now[0] += dx[3]
+# now[1] += dy[3]
+
+for i in range(4): # == 상하좌우 순서대로 한 번씩 움직이겠다 라는 뜻
   now[0] += dx[i]
   now[1] += dy[i]
+
+# 범위를 벗어나지 않으면 갱신
+# if 0 <= now[0] < n and 0 <= now[1] < m:
+#    x = now[0]
+#    y = now[1]
 
 if now[0] <0, now[0] >= n or now[1] < 0 or now[1] >= n:
   print('범위 벗어남')
 else:
   print('정상범위')
+
+
 ```
 
 #### 튜플(tuple)

@@ -3,16 +3,19 @@ def is_sum_zero(nums):
     result = 0
     lst = []
     n = len(arr)
-    for i in range(1<<n):
+    for i in range(1 << n):
         temp = []
         for j in range(n):
-            if i & (1<<j):
+            if i & (1 << j):
                 temp += [arr[j]]
         lst.append(temp)
     for num in lst:
-        if sum(num) == 0 and num != []: # 기본적으로 []가 들어가기 떄문에 이를 제거하지 않으면 모든 부분합은 최소 1개 이상의 0을 가지게 됨
+        if (
+            sum(num) == 0 and num != []
+        ):  # 기본적으로 []가 들어가기 떄문에 이를 제거하지 않으면 모든 부분합은 최소 1개 이상의 0을 가지게 됨
             result = 1
     return result
+
 
 tc = int(input())
 for case in range(tc):

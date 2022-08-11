@@ -1,38 +1,25 @@
-# import sys
-# T = int(sys.stdin.readline())
-# for _ in range(T):
-#     a, b = map(int,sys.stdin.readline().split())
-#     a = a%10
-#     print(a**b%10)
+def counting_sort(original, k):
+    counter = [0] * (k + 1)
 
-import sys
-T = int(sys.stdin.readline())
-for _ in range(T):
-    a, b = map(int,sys.stdin.readline().split())
-    A = []
-    for num in range(1, 11):
-        a1 = a**num%10
-        if a1 not in A:
-            A.append(a1)
-        else:
-            break
-    b = b % len(A)
-    print(A[b])
+    # 1. counter에 original 원소의 빈도수 담기
+    for i in original:  # original = [0, 4, 1, 3, 1, 2, 4, 1]
+        counter[i] += 1
 
-# T = int(input())
-# for tast_case in range(1, T + 1):
-#     list_list = [
-#         [10, 10],
-#         [1, 1],
-#         [2, 4, 8, 6],
-#         [3, 9, 7, 1],
-#         [4, 6],
-#         [5, 5],
-#         [6, 6],
-#         [7, 9, 3, 1],
-#         [8, 4, 2, 6],
-#         [9, 1],
-#     ]
-#     A, B = map(int, input().split())
-#     A_temp = A % 10
-#     print(list_list[A_temp][(B % len(list_list[A_temp])) - 1])
+    # 2. 누적(counter 업데이트)
+    for i in range(1, len(counter)):  # counter = [1, 3, 1 ,1 ,2] -> [1, 4, 5, 6, 8] 누적값
+        counter[i] += counter[i - 1]
+
+    # 3. result 생성
+    result = [-1] * len(original)
+    print(result)
+    # 4. result에 정렬하기(counter를 참조)
+    # Stable 안정정렬의 이유로 뒤에서부터 처리하는 것(들어온 순서대로 정렬하기 위해서 같은 1이 1이 아니기 떄문에)
+    for i in range(len(original) - 1, -1, -1):  # [0, 1, 1, 1, 2, 3, 4, 4]
+        counter[original[i]] -= 1  # 썼으니까 빼자
+        result[counter[original[i]]] = original[i]
+
+    return result
+
+
+a = [0, 4, 1, 3, 1, 2, 4, 1]
+print(counting_sort(a, 5))  # [0, 1, 1, 1, 2, 3, 4, 4]
