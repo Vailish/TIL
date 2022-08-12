@@ -1,52 +1,36 @@
 # 1954. 달팽이 숫자 D2
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PobmqAPoDFAUq&categoryId=AV5PobmqAPoDFAUq&categoryType=CODE&problemTitle=1954&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1&&&&&&&&&
 
-test_case = int(input())
-dx = [1, 0, -1, 0]  # 우, 하, 좌, 상
-dy = [0, -1, 0, 1]  # 우, 하, 좌, 상
-for t in range(1, test_case + 1):
+# 풀이 - 델타이동 이용하기
+
+T = int(input())
+dx = [0, 1, 0, -1]  # 우, 하, 좌, 상 # 방향 꼭꼭 확인하자
+dy = [1, 0, -1, 0]  # 우, 하, 좌, 상
+
+for t in range(1, T+1):
     N = int(input())
-    arr = [[0] * N for _ in range(N)]
-    x, y = 0, 0
-    direction = 0
-    # 행렬 생성
-    # while문을 써서 끝까지 델타이동시킴
-    # 범위 초과거나 0이 아닌 숫자가 존재하면, 방향을 틀음
-    # 이런식으로 N**2까지 진행하면 끝!
+    field = [[0]*N for _ in range(N)]
+    x, y = 0, 0  # 달팽이 현재 위치
+    dir = 0 # 우0, 하1, 좌2, 상3
 
-    for i in range(1, N * N + 1):
-        arr[x][y] = i
-        # 다음 위치 이동
-        nx = x + dx[direction]
-        ny = y + dy[direction]
+    # 달팽이전진
+    for num in range(1, N**2 + 1): # 숫자찍기
+        field[x][y] = num
 
-        # 범위 안에 있나 & 이미 숫자가 있나
-        if 0 <= nx < N and 0 <= ny < N and arr[nx][ny] == 0:
-            x, y = nx, ny
-        else:
-            direction = (direction + 1) % 4
-            x += dx[direction]
-            y += dy[direction]
-
+        # 달팽이 이동할 장소 nx, ny
+        nx = x + dx[dir%4]
+        ny = y + dy[dir%4]
+        
+        # 이동 가능 여부 검사
+        if 0 <= nx < N and 0 <= ny < N and field[nx][ny] == 0:
+            x = nx  #실제로 이동
+            y = ny
+        else:  # 못가니까 머리를 돌려놔주자
+            dir = (dir + 1) % 4
+            x += dx[dir]
+            y += dy[dir]
+    
+    # 완주!! 출력!
     print(f'#{t}')
-    for line in arr:
-        print(*line)
-
-# 이중 for 문으로도 해결가능
-
-
-# test_case = int(input())
-# dx = [1, 0, -1, 0]  # 우, 하, 좌, 상
-# dy = [0, -1, 0, 1]  # 우, 하, 좌, 상
-# for t in range(1, test_case + 1):
-#     N = int(input())
-#     # 행렬 생성
-#     # while문을 써서 끝까지 델타이동시킴
-#     # 범위 초과거나 0이 아닌 숫자가 존재하면, 방향을 틀음
-#     # 이런식으로 N**2까지 진행하면 끝!
-
-#     arr = [[0] * N for _ in range(N)]
-#     x, y = 0, 0  # 출발 위치
-#     direction = 0  # 출발 방향 0 == 오른쪽
-#     nx = x + dx[direction]
-#     ny = y + dy[direction]
+    for lst in field:
+        print(*lst)

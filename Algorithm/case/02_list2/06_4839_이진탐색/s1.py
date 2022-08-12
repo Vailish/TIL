@@ -1,5 +1,8 @@
 # 4839. [파이썬 S/W 문제해결 기본] 2일차 - 이진탐색 D2
 # https://swexpertacademy.com/main/learn/course/lectureProblemViewer.do
+
+# 풀이 - 전개
+
 T = int(input())
 for case in range(1, T + 1):
     P, Pa, Pb = map(int, input().split())

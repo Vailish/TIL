@@ -1,3 +1,5 @@
+#counting sort
+
 def counting_sort(original, k):
     counter = [0] * (k + 1)
 
