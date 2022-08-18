@@ -8,7 +8,9 @@ def bubble_sort(a):
                 a[j], a[j+1] = a[j+1], a[j]
     return a
 
+
 print(bubble_sort(sample))
+
 
 # sample = [55, 7, 78, 12 ,42]
 
