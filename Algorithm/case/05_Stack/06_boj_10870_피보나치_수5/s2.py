@@ -1,8 +1,14 @@
+# 2. 피보나치 재귀 + Memoization 풀이
+# 0 1 1 2 3 5 8 13 ...
+
+
 def fibo(n):
-    if n <= 1:
-        return n
+    if len(memo) <= n:
+        memo.append(fibo(n - 1) + fibo(n - 2))
+    return memo[n]
 
-    return fibo(n - 2) + fibo(n - 1)
 
+memo = [0, 1]
 
-print(fibo(int(input())))
+print(fibo(5))
+# print(fibo(40)) # 단순 재귀만 사용했을 때보다 더 빠르게 결과가 출력됨을 확인
