@@ -12,7 +12,6 @@ def dfs(v):
             # v1과 v2를 설정해 주는 과정에서 들어갔기때문? 그럼 graph[1]이 아니라 graph[0]이 1과 연결되는 리스트 아님?
 
 
-
 n, m = map(int, input().split())  # 정점, 간선 개수
 edges = list(map(int, input().split()))  # 간선 정보
 graph = [[] for _ in range(n + 1)]  # 그래프 -> n + 1인 이유는 정점 번호가 1번부터이기 때문
