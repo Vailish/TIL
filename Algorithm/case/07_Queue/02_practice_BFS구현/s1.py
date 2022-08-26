@@ -15,7 +15,6 @@ def bfs(v):
                 print(next_v, end=' ')
 
 
-
 # 사용할 변수 입력
 n, m = map(int, input().split())  # 정점, 간선 개수
 edges = list(map(int, input().split()))  # 간선 정보
