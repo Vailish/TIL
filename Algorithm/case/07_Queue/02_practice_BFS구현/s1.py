@@ -1,6 +1,15 @@
 ### bfs : 구현에 있어서 dfs와 매우 유사
 ### graph를 만드는데 까지는 똑같지만, queue를 사용해서 while문 돌리는게 차이점이다.
 
+# dfs 와 비교
+# def dfs(v):
+#     visited[v] = 1  # 현재 방문 정점(꼭지점) 방문처리
+#     print(v, end=' ')
+    
+#     for next_v in graph[v]:  # 현재 방문 정점과 연결된 모든 경우의 수 확인
+#         if visited[next_v] == 0:  # 방문 안했으면
+#             dfs(next_v)  # 방문해라
+
 def bfs(v):
     visited[v] = True
     queue = [v]
@@ -13,6 +22,7 @@ def bfs(v):
                 visited[next_v] = True  # 인접 정점 방문처리
                 queue.append(next_v)  # 인접 정점을 큐에 삽입
                 print(next_v, end=' ')
+
 
 
 # 사용할 변수 입력
