@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>greeting</title>
+</head>
+<body>
+  <h1>안녕하세요. 저는 {{ name }} 입니다.</h1>
+  <p>제 이름의 길이는 {{ name|length }} 글자 입니다.</p>
+  {% comment %} <p>제가 좋아하는 음식은 {{ food|join:" & " }} 입니다.</p>  {% endcomment %}
+  
+  {% for food  in foods %}
+    {% if food|length > 6 %}
+      <p>6글자 초과의 음식은 {{ food }}</p>
+    {% endif %}
+  {% endfor %}
+
+    {% comment %} {% for food in foods %}
+    <p>{{ forloop.counter0 }}번째 음식 {{ food }}</p>
+  {% endfor %} {% endcomment %}
+
+    {# <p>이것은 한 줄짜리 주석입니다.</p> #}
+
+    {% comment %} <p>이것은 여러줄 주석입니다.</p>
+    <p>이것은 여러줄 주석입니다.</p> {% endcomment %}
+
+  {% for food  in foods %}
+    <p>{{ forloop.counter0 }}</p>
+
+  {% empty %}
+    <p>죄송합니다. 좋아하는 음식이 없네요.</p>
+  {% endfor %}
+  <p>{{ today|date:"Y년 m월 j일 (D) A h:i" }}</p>
+  <a href={% url 'index' %}>홈 화면으로 이동</a>
+</body>
+</html>
