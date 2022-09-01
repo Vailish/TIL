@@ -3,9 +3,9 @@
 {% block content %}
   <h1>New</h1>
   <form action="{% url 'articles:create' %}" method='POST'>
-    {% csrf_token %}  {# 내가 관리자라는 증거(내가 보낸거라는 증거)를 같이 보내줄게!, post를 쓸때는 무조건 csrf_token을 써야한다! #}
+    {% csrf_token %}  {# 내가 관리자라는   증거(내가 보낸거라는 증거)를 같이 보내줄게!, post를 쓸때는 무조건 csrf_token을 써야한다! #}
     <label for='title'>Title: </label>
-    <input type ='text' name='title'><br>
+    <input type='text' name='title'><br>
     <label for='content'>Content: </label>
     <textarea name='content'></textarea><br>
     <input type='submit'>
