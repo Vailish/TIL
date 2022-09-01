@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')  # 무조건 request 첫번째, 두번째는 어디로, 세번째부터? 데이터
+    return render(request, 'articles/index.html')  # 무조건 request 첫번째, 두번째는 어디로, 세번째부터? 데이터
 
 
 def greeting(request):
@@ -13,10 +13,10 @@ def greeting(request):
         'foods': ['apple', 'chicken', 'burger'],
         'today' : today
     }
-    return render(request, 'greeting.html', context)
+    return render(request, 'articles/greeting.html', context)
 
 def throw(request):
-    return render(request, 'throw.html')
+    return render(request, 'articles/throw.html')
 
 def catch(request):
     # print(request)
@@ -36,10 +36,10 @@ def catch(request):
     context = {
         'message':message,        
     }
-    return render(request, 'catch.html', context)
+    return render(request, 'articles/catch.html', context)
 
 def show(request, name):
     context = {
         'name':name
     }
-    return  render(request, 'show.html', context)
+    return  render(request, 'articles/show.html', context)

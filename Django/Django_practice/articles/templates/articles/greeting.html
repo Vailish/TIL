@@ -33,6 +33,6 @@
     <p>죄송합니다. 좋아하는 음식이 없네요.</p>
   {% endfor %}
   <p>{{ today|date:"Y년 m월 j일 (D) A h:i" }}</p>
-  <a href={% url 'index' %}>홈 화면으로 이동</a>
+  <a href={% url 'articles:index' %}>홈 화면으로 이동</a>
 </body>
 </html>
