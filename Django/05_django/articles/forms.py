@@ -25,7 +25,7 @@ class ArticleForm(forms.ModelForm):
             }
         ),
         error_messages={
-            'required': '내용 입력하라고..',
+            'required': '내용을 입력하세요.',
         }
     )
 
