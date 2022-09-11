@@ -175,7 +175,7 @@ ctrl shift backspace 줄 삭제
 ---
 <<<Git>>>
 git config --global user.name vailish 이름 등록해줘
-git config --global user.email joyksj94@gmail.com 이메일 등록해줘
+git config --global user.email ABC@gmail.com 이메일 등록해줘
 git config --global --list 리스트 보여줘
 git init : 이거 git으로 가입할거야 (일반폴더를 git이 관리하는 로컬 저장소로 만들자!)
 ls -a : .git이 나오면 git이 관리해주고 있는거
