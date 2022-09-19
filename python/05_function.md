@@ -390,6 +390,18 @@ print(a, b, c) = map(int, input().split())
 print(a, b, c, sep='&', end='!')
 # 1&2&3!
 ```
+
+- format(숫자, '바꿀형태')
+  - 숫자를 n진법으로 바꿔줌(이진 : 'b', 8진 : 'o', 16진 : 'x', 'X', 'd')
+  - ex)
+```python
+format(42, 'b')  # '101010'
+format(42, '#b')  # '0b101010'
+ ```
+
+
+
+
 - ascii 아스키 문자 내장함수
   - ord() 문자 -> 숫자
   - chr() 숫자 -> 문자

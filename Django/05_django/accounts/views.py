@@ -1,4 +1,3 @@
-from ast import Pass
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm # UserCreationForm <- CustomUserCreationForm을 만들었기 떄문
 from django.contrib.auth import login as auth_login
