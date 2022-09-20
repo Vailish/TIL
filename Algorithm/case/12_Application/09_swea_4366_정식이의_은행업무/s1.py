@@ -1,0 +1,73 @@
+# 4366. 정식이의 은행업무 D4
+# https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWMeRLz6kC0DFAXd&categoryId=AWMeRLz6kC0DFAXd&categoryType=CODE&problemTitle=%EC%A0%95%EC%8B%9D&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1
+
+import sys
+sys.stdin = open('input.txt')
+
+# 3:40
+
+dic_2 = {'0': '1',
+         '1': '0'}
+dic_3_1 = {'0': '1',
+           '1': '2',
+           '2': '0'}
+dic_3_2 = {'0': '2',
+           '1': '0',
+           '2': '1'}
+
+for case in range(1, 1 + int(input())):
+    data_2 = input()
+    data_3 = input()
+
+    # 2진수 한 자리 변경
+    for num in range(len(data_2)):
+        value = data_2[:num] + dic_2.get(data_2[num]) + data_2[num + 1:]
+        # 3진수로 변경
+        value_10 = int(value, 2)  # 10진수로 변경
+        # print(value_10)
+        rev_base = ''
+        while value_10 > 0:
+            value_10, mod = divmod(value_10, 3)
+            rev_base += str(mod)
+        print(rev_base)
+        value_3 = rev_base[::-1]
+
+        # 기 3진수 값이랑 비교
+        result = 0
+        answer = False
+        # print(data_3, value_3, '123124232154213523433')
+        for num2 in range(len(data_3)):
+            value_2 = data_2[:num2] + dic_3_1.get(data_3[num2]) + data_2[num2 + 1:]
+            # print('*'*10)
+            # print(num, num2, value_2)
+            # print(data_2[:num2], dic_3_1.get(data_3[num2]), data_2[num2 + 1:])
+            # print('#' * 10)
+            if value_2 == value_3:
+                result = int(value_2, 3)
+                answer = True
+                break
+        if answer == False:
+            for num2 in range(len(data_3)):
+                value_2 = data_2[:num2] + dic_3_2.get(data_3[num2]) + data_2[num2 + 1:]
+                # print(num2, value_2, data_3)
+                if value_2 == value_3:
+                    result = int(value_2, 3)
+                    break
+        if result:
+            print(f'#{case} {result}')
+            break
+
+
+# while value_10 != 0:
+#     if len(value_3) >= 40:
+#         break
+#
+#     if value_10 > 3 ** (len-len(value_3)):
+#         if value_10 > 2 * 3 ** (len(value_3) + 1):
+#             value_3 += '2'
+#             value_10 -= 2 * 3 ** (len(value_3) + 1)
+#         else:
+#             value_3 += '1'
+#             value_10 -= 3 ** (len(value_3) + 1)
+#     else:
+#         value_3 += '0'
