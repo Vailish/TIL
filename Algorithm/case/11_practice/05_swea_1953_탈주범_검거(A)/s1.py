@@ -20,9 +20,11 @@ idx = {
 def bfs(x, y, t):
     visited[x][y] = 1  # 시작지점 방문처리
     queue = [(x, y, t)]
+    cnt = 0
 
     while queue:
         x, y, t = queue.pop(0)
+        cnt += 1
         if t == 1:
             break
         # 현 위치 구조물 정보 확인
@@ -42,10 +44,10 @@ def bfs(x, y, t):
                     queue.append((nx, ny, t - 1))
 
     # visited의 합 구하기
-    result = 0
-    for lst in visited:
-        result += sum(lst)
-    return result
+    # result = 0
+    # for lst in visited:
+    #     result += sum(lst)
+    return cnt
 
 
 for case in range(1, 1+int(input())):
