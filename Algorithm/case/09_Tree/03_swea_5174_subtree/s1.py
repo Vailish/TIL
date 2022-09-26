@@ -1,11 +1,16 @@
 # 5174. [파이썬 S/W 문제해결 기본] 8일차 - subtree D2
 # https://swexpertacademy.com/main/learn/course/lectureProblemViewer.do
 
+import sys
+sys.stdin = open('input.txt')
+
+
 def in_order(node):
     global cnt
     if node != 0:  # 리프노드일때
         in_order(tree[node][0])
         cnt += 1
+        print(node, end=" ")
         in_order(tree[node][1])
 
     return cnt
