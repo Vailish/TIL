@@ -1,17 +1,6 @@
-# 5204. [파이썬 S/W 문제해결 구현] 4일차 - 병합 정렬 D3
-# https://swexpertacademy.com/main/learn/course/lectureProblemViewer.do
-
-import sys
-sys.stdin = open('input.txt')
-
-
 def merge(left, right):
-    global cnt
-    i, j = 0, 0
     merged_arr = []
-
-    if left[-1] > right[-1]:
-        cnt += 1
+    i, j = 0, 0
 
     while i < len(left) and j < len(right):
         if left[i] >= right[j]:
@@ -27,7 +16,7 @@ def merge(left, right):
 
 
 def merge_sort(arr):
-
+    # 종료조건
     if len(arr) <= 1:
         return arr
 
@@ -38,9 +27,7 @@ def merge_sort(arr):
     return merge(left_arr, right_arr)
 
 
-for case in range(1, 1 + int(input())):
-    N = int(input())
-    arr = list(map(int, input().split()))
-    cnt = 0
-    result = merge_sort(arr)
-    print(f'#{case}', result[N//2], cnt)
+numbers = [3, 2, 4, 6, 9, 1, 8, 7, 5]
+sorted_numbers = merge_sort(numbers)
+print(sorted_numbers)
+# [1, 2, 3, 4, 5, 6, 7, 8, 9]
