@@ -1,8 +1,7 @@
 # 1242. [S/W 문제해결 응용] 1일차 - 암호코드 스캔 D5
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV15JEKKAM8CFAYD&categoryId=AV15JEKKAM8CFAYD&categoryType=CODE&problemTitle=1242&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1&&&&&&&&&
 
-# import sys
-# sys.stdin = open('input.txt')
+
 '''
 1. 암호코드의 흰색, 파란색의 넓이 비(ratio)와 숫자 값을 딕셔너리로 매핑한다.
 2. 비(ratio)가 3:1:1:2 라고 하면 사실 이를 판별하는 건 뒤에 세 자리(1:1:2)만 있어도 가능하다.
@@ -19,13 +18,29 @@
 13. (주의) 동일 암호 코드의 중복 계산을 방지해야 한다.
 '''
 
-def solution():
-    return
+import sys
+sys.stdin = open('input.txt')
 
+idx = [
+    '0001101', '0011001',
+    '0010011', '0111101',
+    '0100011', '0110001',
+    '0101111', '0111011',
+    '0110111', '0001011']
+
+
+def solution():
+    # 16진법을 2진법으로 변환!
+
+    # 끝점과 시작점 찾기!
+
+    # 검산하기!
+    return
 
 
 for case in range(1, 1 + int(input())):
     N, M = map(int, input().split())  # N = 세로, M = 가로
+    arr = list(set(input().rstrip() for _ in range(N)))  # 중복 제거후 리스트로 저장
     print(f'#{case} {solution()}')
 
 
