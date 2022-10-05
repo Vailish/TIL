@@ -3,6 +3,7 @@
 
 # 11:00
 import sys
+
 sys.stdin = open('input.txt')
 
 idx = [
@@ -20,15 +21,16 @@ for case in range(1, 1 + int(input())):
         temp = input()
         if '1' in temp:
             data = temp
-    # 필요없는 코드 제거
-    end = M -data[::-1].index('1')
+
+        # 필요없는 코드 제거
+    end = M - data[::-1].index('1')
     start = end - 56
     data = data[start:end]
 
     # 암호 해석하기
     result = []
     for num in range(0, 56, 7):
-        result.append(idx.index(data[num:num+7]))
+        result.append(idx.index(data[num:num + 7]))
 
     # 코드 검사
     chk = 0
