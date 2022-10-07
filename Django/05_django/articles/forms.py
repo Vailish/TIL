@@ -7,7 +7,7 @@ class ArticleForm(forms.ModelForm):
         label='제목',
         widget=forms.TextInput(
             attrs={
-                'class': 'my-title',
+                'class': 'my-title',  # class bootstrap
                 'placeholder': 'Enter the title',
                 'maxlength': 10,
             }

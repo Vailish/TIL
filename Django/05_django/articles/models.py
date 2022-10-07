@@ -7,5 +7,5 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.title
+    def __str__(self):      # shell에서 호출할 때 보기편하라고 넣은것
+        return self.title   # 없어도 상관 없음
