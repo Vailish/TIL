@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>UPDATE</h1>
+  <form action="{% url 'articles:update' article.pk %}" method="POST" enctype='multipart/form-data'>
+    {% comment %} 기본적으로는 대체된 사진은 계속 저장되어 있어서 따로 관리를 해야하지만, 이는 라이브러리로 대체 가능 {% endcomment %}
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+  </form>
+  <hr>
+  <a href="{% url 'articles:index' %}">[back]</a>
+{% endblock content %}

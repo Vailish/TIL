@@ -7,7 +7,7 @@ def f(n, cnt):
     else:
         for i in range(len(num)-1):
             for j in range(i+1, len(num)):
-                num[i], num[j] = num[j], num[i]
+                num[i], num[j] = num[j  ], num[i]
                 tmp = int(''.join(num))
                 print(u[n])
                 if tmp not in u[n]:     # 같은 교환횟수일 때 중복 제거
