@@ -221,3 +221,15 @@ git remote -v : 확인
 git push origin master 넘기기
 
 로컬에서 다한다음에 넘겨주기까지해야됨
+
+git rm -> commit 자체를 지워버림 -> 직전 버전으로 돌아감
+git restore -- staged commit을 지우는 것이 아니라, staged 주소값을 직전 값으로 바꾸어 줌 -> 직전 버전으로 돌아가는 효과
+
+working directory와 staging area는 공유하기 때문에 branch 스위치 하기전에는 무조건 커밋을 다 하고 변경하자...
+
+
+1. git graph 설치
+
+2. commit 3개
+
+3. 브랜치 조회
