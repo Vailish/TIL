@@ -77,7 +77,7 @@ def comment_detail(request, comment_pk):
 @api_view(['POST'])
 def comment_create(request, article_pk):
     # article = Article.objects.get(pk=article_pk)
-    article = get_object_or_404(article, pk=article_pk)
+    article = get_object_or_404(Article, pk=article_pk)
     serializer = CommentSerializer(data=request.data)  # request.POST 말고
     if serializer.is_valid(raise_exception=True):
         serializer.save(article=article)  # commit=False말고 이렇게
