@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="function">function</button>
+  <button id="arrow">arrow function</button>
+
+  <script>
+    // 자바스크립트에서는 함수가 어떻게 호출되었는지에 따라 동적으로 결정됨... 이게
+    // 프로그래밍언어인 자바와 파이썬 등과 다른점...
+    // 함수 호출 방법 : 1. 단순 호출 / 2. Method(객체의 메서드로서) / 3. Nested
+    // 1. 단순 호출 : 전역객체, 2. Method : 해당 객체, 3.콜백함수로 호출될 때, 전역객체처럼 윈도우 가르킴
+    // 3번을 2번과 같이 바꾸려고 나온 것이 화살표 함수(어디서 호출 되었는지는 상관 없음, 어디에 선언 하였는지가 중요)\
+    // : 한 단계 상위의 scope의 context를 바인딩(Lexical scope this, 보통 프로그래밍 언어와 같은 방법).
+
+
+    // cf : addEventListener의 경우에는 화살표함수를 사용하면 전역으로 나가져버리기 때문에 이 경우에는
+    // 호출한 대상(event.target)을 가르키지 않음 그러니까 addEventListener의 경우에는
+    // 콜백함수를 화살표함수 대신 function을 사용하자
+
+    // this와 addEventListener
+    const functionButton = document.querySelector('#function')
+    const arrowButton = document.querySelector('#arrow')
+
+    functionButton.addEventListener('click', function(event) {
+      console.log(this) // <button id="function">function</button>
+    })
+
+    arrowButton.addEventListener('click', event => {
+      console.log(this) // window
+    })
+  </script>
+</body>
+</html>
