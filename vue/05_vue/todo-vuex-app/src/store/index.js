@@ -61,18 +61,18 @@ export default new Vuex.Store({
       }
       // console.log(todoItem)
       context.commit('CREATE_TODO', todoItem)
-      // context.dispatch('saveTodosToLocalshorage')
+      // context.dispatch('saveTodosLocalStorage')
     },
     deleteTodo(context, todoItem) {  // 이런경우, 딱히 하는거 없을 때
       context.commit('DELETE_TODO', todoItem)  // 생략해도됨...
-      // context.dispatch('saveTodosToLocalshorage')
+      // context.dispatch('saveTodosLocalStorage')
     },
     updateTodoStatus(context, todoItem) {
       // console.log(todoItem)
       context.commit('UPDATE_TODO_STATUS', todoItem)
-      // context.dispatch('saveTodosToLocalshorage')
+      // context.dispatch('saveTodosLocalStorage')
     },
-    // saveTodosToLocalshorage(context) {
+    // saveTodosLocalStorage(context) {
     //   const jsonTodos = JSON.stringify(context.state.todos)
     //   localStorage.setItem('todos', jsonTodos) // key이름은 아무거나해줘도됨
     // },  // 라이브러리가 대신해줌

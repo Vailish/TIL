@@ -31,11 +31,11 @@ export default {
       return this.$store.getters.unCompletedTodosCount
     }
   },
-  methods: {
-    loadTodos() {
-      this.$store.dispatch('loadTodos')
-    }
-  }
+  // methods: {
+  //   loadTodos() {
+  //     this.$store.dispatch('loadTodos')
+  //   }
+  // }
 }
 </script>
 
