@@ -22,3 +22,4 @@
 #2 6
 #3 13
 ```
+### [내 풀이](https://github.com/Vailish/TIL/blob/master/03_Algorithm/Examples/01_List1/01_Gravity/s1.py)
