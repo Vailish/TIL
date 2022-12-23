@@ -30,5 +30,10 @@ public class Intro03_PrintTest {
 		System.out.printf("%c\n", 'o');
 		
 		System.out.printf("안녕하세요. 저는 %s입니다. 제 혈애액형은 %c일껄요?", "Vailish", 'C');
+		
+		// 파이썬과는 다르게 println은 한개의 인자만 받을 수 있다.
+		// System.out.pirntln(a, b)처럼 못씀
+		// 이렇게 쓰려면 System.out.println(a + " " + b) 처럼 쓰거나
+		// System.out.printf("%d %d%n", a, b)와 같이 사용해야함
 	}
 }
