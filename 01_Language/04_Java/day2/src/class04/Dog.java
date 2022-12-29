@@ -1,6 +1,6 @@
 package class04;
 
-public class Dog {
+class Dog {
 	String name;
 	int age;
 	
