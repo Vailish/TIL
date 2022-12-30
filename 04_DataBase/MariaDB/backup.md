@@ -1,5 +1,6 @@
 # DBeaver와 CMD를 사용한 MariaDB 백업 복구
-
+## MariaDB란?
+MariaDB는 오픈 소스의 관계형 데이터베이스 관리 시스템(RDBMS)이다. MySQL과 동일한 소스 코드를 기반으로 하며, GPL v2 라이선스를 따른다. 오라클 소유의 현재 불확실한 MySQL의 라이선스 상태에 반발하여 만들어졌으며, 배포자는 몬티 프로그램 AB(Monty Program AB)와 저작권을 공유해야 한다
 ## 1. 데이터테이블 만들기
 ```sql
 create database singer;
