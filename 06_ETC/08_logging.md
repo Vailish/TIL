@@ -21,3 +21,16 @@
 ## 로그 저장
 - 로그는 중요한 자원이고, 다른 팀원도 볼 수 있게 끔 파일로 많이 남김
 - DB에 저장해도 되지만, DB는 비싼 자원이기 때문에 저장여부 결정 시 한 번 생각을 해봐야 됨
+
+# PDD 프로젝트(2022.12.30)에 적용 결과
+![스크린샷_20221230_064910](https://user-images.githubusercontent.com/109258380/210057350-8c542ddd-4ee6-4eab-8a6b-736f19a8abaf.png)
+
+![스크린샷_20221230_064926](https://user-images.githubusercontent.com/109258380/210057416-1478da98-4bb8-48a2-9ece-ec1fb5fada4e.png)
+
+![스크린샷_20221230_064935](https://user-images.githubusercontent.com/109258380/210057466-9434aea2-b5a8-48c7-8bcf-841b99bdba4f.png)
+
+![스크린샷_20221230_065106](https://user-images.githubusercontent.com/109258380/210057547-a708a5e9-5055-436a-99a6-997eaecff56b.png)
+
+## 참고 사이트
+https://locust.io/
+https://wookkl.tistory.com/67
