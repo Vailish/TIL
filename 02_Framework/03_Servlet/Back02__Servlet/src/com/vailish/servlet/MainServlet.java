@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.vailish.dto.Person;
 
-@WebServlet("/Main")
+@WebServlet("/main")
 public class MainServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,7 +44,7 @@ public class MainServlet extends HttpServlet {
 
 }
 
-	private void doGuGu(HttpServletRequest request, HttpServletResponse response) {
+	private void doGuGu(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int dan = Integer.parseInt(request.getParameter("dan"));
 		
 		PrintWriter writer = response.getWriter();
@@ -62,7 +62,7 @@ public class MainServlet extends HttpServlet {
 		writer.append("</html>");
 	}
 
-	private void doRegist(HttpServletRequest request, HttpServletResponse response) {
+	private void doRegist(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String gender = request.getParameter("gender");
@@ -74,6 +74,7 @@ public class MainServlet extends HttpServlet {
 		Person p = new Person(name, age, gender, hobbies);
 		
 		PrintWriter writer = response.getWriter();
+		
 		writer.append("<html>");
 		writer.append("<head>");
 		writer.append("<title>PersonInfo</title>");
@@ -84,3 +85,4 @@ public class MainServlet extends HttpServlet {
 		writer.append("</body>");
 		writer.append("</html>");
 	}
+}
