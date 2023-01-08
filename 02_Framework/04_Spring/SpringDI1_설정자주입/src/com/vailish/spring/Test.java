@@ -15,7 +15,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 //     > 다운로드수가 많은(안정적으로 보이는 녀석, 여기서는 5.3.18) > Maven 복사해서 pom.xml의 build 뒤에 > <dependencies> 넣어주고
 //     > 그 태그 안에 붙여넣기해서 dependencies 안에 dependency들을 넣어주면 됨
 
-//스프링 설정파일 만들고 객체(bean) 등록하기
+//스프링 설정파일 만들고 객체(bean) 등록하기/의존관계 설정
 //스프링 컨테이너 객체 빌드, 사용
 public class Test {
 	public static void main(String[] args) {

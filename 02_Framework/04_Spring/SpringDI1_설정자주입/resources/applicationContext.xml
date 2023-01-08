@@ -4,7 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean class="com.vailish.spring.Desktop" id="desktop"></bean>
+	<bean class="com.vailish.spring.Labtop" id="labtop"></bean>
 	<bean class="com.vailish.spring.Worker" id="worker" >
 		<property name="hong" value="27"></property>
+		<property name="computer" ref="desktop"></property>
 	</bean>
 </beans>

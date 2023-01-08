@@ -15,9 +15,12 @@ public class Worker {
 		this.computer = computer;
 	}
 	public void doWork() {
-		System.out.println(this.computer.getInfo() + " 로 일합니다.");
+		System.out.println(this.computer.getInfo() + " 로 일합니다." + this.age);
 	}
-	public void setHong(int value) {
-		
+	private int age;
+	public void setHong(int value) {//applicationContext에서 상수연결 value, 객체연결 ref 사용
+		this.age = value;		
 	}
+	//자바코드를 건드리지 않고 세팅(applicationContext를 이용해서 결과값을 수정할 수 있다.
+	//ex) worker가 데스크탑으로 일할지 노트북으로 일할지 등등 결정이 가능함
 }
