@@ -1,0 +1,13 @@
+package com.ssafy.board.test;
+
+//1. JDBC 드라이버 로드
+//2. 데이터베이스 연결
+//3. SQL 준비 및 실행
+//4. 데이터베이스 연결해제
+
+
+public class JDBCTest {
+	public static void main(String[] args) {
+		
+	}
+}

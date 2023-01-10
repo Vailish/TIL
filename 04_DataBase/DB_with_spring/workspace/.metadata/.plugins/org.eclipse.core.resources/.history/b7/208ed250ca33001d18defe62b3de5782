@@ -1,0 +1,63 @@
+package com.ssafy.board.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ssafy.board.model.dto.Board;
+
+//1. JDBC 드라이버 로드
+//2. 데이터베이스 연결 (Connection)
+//3. SQL 준비 및 실행
+//4. 데이터베이스 연결해제
+
+
+public class JDBCTest {
+	
+	public JDBCTest() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("드라이버 로딩 성공");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		JDBCTest jdbctest = new JDBCTest();
+	}
+	
+	private List<Board> selectAll() {
+		List<Board> list = new ArrayList<>();
+		
+		try {
+			//연결
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ssafy_board?serverTimeZone=UTC", "root", "root");
+			//SQL 주비
+			String sql = "SELECT * FROM board";
+			
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return list;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

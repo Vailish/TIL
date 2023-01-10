@@ -1,0 +1,74 @@
+package com.ssafy.board.model.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.ssafy.board.model.dto.Board;
+import com.ssafy.board.util.DBUtil;
+
+public class BoardDaoImpl implements BoardDao {
+	// 만들어진 DBUtil 들고오기
+	private final DBUtil util = DBUtil.getInstance();
+
+	private static BoardDaoImpl instance = new BoardDaoImpl();
+
+	private BoardDaoImpl() {
+	}
+
+	public static BoardDaoImpl getInstance() {
+		return instance;
+	}
+
+	@Override
+	public List<Board> selectAll() {
+		return null;
+	}
+
+	@Override
+	public Board selectOne(int id) {
+		return null;
+	}
+
+	@Override
+	public void insertBoard(Board board) throws SQLException {
+//		String sql = "INSERT INTO board (title, writer, content) VALUES ('"+board.getTitle()+"','"++""')";
+		String sql = "INSERT INTO board (title, writer, content) VALUES (?,?,?)";
+		
+		//DB 접속해서 사용하게끔 쓰자.
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = util.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getWriter());
+			pstmt.setString(3, board.getContent());
+			
+			int result = pstmt.executeUpdate();
+			System.out.println(result);
+		}finally {
+			util.close(pstmt, conn);
+		}
+		
+	}
+
+	@Override
+	public void deleteBoard(int id) {
+
+	}
+
+	@Override
+	public void updateBoard(Board board) {
+
+	}
+
+	@Override
+	public void updateViewCnt(int id) {
+
+	}
+
+}

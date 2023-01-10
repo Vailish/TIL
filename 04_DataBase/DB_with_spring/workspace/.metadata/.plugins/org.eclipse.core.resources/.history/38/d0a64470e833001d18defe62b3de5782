@@ -1,0 +1,40 @@
+package com.ssafy.board.test;
+
+import java.sql.SQLException;
+
+import com.ssafy.board.model.dao.BoardDao;
+import com.ssafy.board.model.dao.BoardDaoImpl;
+import com.ssafy.board.model.dto.Board;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		BoardDao dao = BoardDaoImpl.getInstance();
+		
+//		Board board = new Board("커피사냥꾼", "임혜진2", "인터페이스 마스터라 ez");
+//		
+//		try {
+//			dao.insertBoard(board);
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+		try {
+			Board board = dao.selectOne(3);
+			System.out.println(board);
+			board.setContent("사실 나는 커피사냥꾼이 맞습니다.");
+			dao.updateBoard(board);
+//			dao.updateViewCnt(3);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		
+//		for(Board b : dao.selectAll()) {
+//			System.out.println(b);
+//		}
+		
+		
+		
+			
+	}
+}

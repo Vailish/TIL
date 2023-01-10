@@ -1,0 +1,52 @@
+package com.ssafy.board.model.dao;
+
+import java.util.List;
+
+import com.ssafy.board.model.dto.Board;
+import com.ssafy.board.util.DBUtil;
+
+public class BoardDaoImpl implements BoardDao {
+	// 만들어진 DBUtil 들고오기
+	private final DBUtil util = DBUtil.getInstance();
+
+	private static BoardDaoImpl instance = new BoardDaoImpl();
+
+	private BoardDaoImpl() {
+	}
+
+	public static BoardDaoImpl getInstance() {
+		return instance;
+	}
+
+	@Override
+	public List<Board> selectAll() {
+		return null;
+	}
+
+	@Override
+	public Board selectOne(int id) {
+		return null;
+	}
+
+	@Override
+	public void insertBoard(Board board) {
+//		String sql = "INSERT INTO board (title, writer, content) VALUES ('"+board.getTitle()+"','"++""')";
+		String sql = "INSERT INTO board (title, writer, content) VALUES (?,?,?)";
+	}
+
+	@Override
+	public void deleteBoard(int id) {
+
+	}
+
+	@Override
+	public void updateBoard(Board board) {
+
+	}
+
+	@Override
+	public void updateViewCnt(int id) {
+
+	}
+
+}

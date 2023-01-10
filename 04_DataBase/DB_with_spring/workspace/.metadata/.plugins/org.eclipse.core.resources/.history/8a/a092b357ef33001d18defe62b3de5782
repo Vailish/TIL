@@ -1,0 +1,14 @@
+package com.ssafy.board.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+import com.ssafy.board.model.dao.BoardDao;
+import com.ssafy.board.model.dao.BoardDaoImpl;
+
+@WebServlet("/board")
+public class BoardController extends HttpServlet{
+	
+	private BoardDao dao = BoardDaoImpl.getInstance();
+	
+}

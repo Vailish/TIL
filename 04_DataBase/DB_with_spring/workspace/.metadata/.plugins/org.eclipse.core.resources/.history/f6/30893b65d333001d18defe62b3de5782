@@ -1,0 +1,16 @@
+package com.ssafy.board.test;
+
+import com.ssafy.board.model.dao.BoardDao;
+import com.ssafy.board.model.dao.BoardDaoImpl;
+import com.ssafy.board.model.dto.Board;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		BoardDao dao = BoardDaoImpl.getInstance();
+		
+		Board board = new Board("커피사냥꾼", "임혜진", "인터페이스 마스터라 ez");
+		
+		dao.insertBoard(board);
+	}
+}
