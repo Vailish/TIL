@@ -12,7 +12,7 @@ public class DBUtil {
 	private final String url = "jdbc:mysql://localhost:3306/ssafy_board?serverTimezone=UTC";
 	// USER 정보
 	private final String username = "root";
-	private final String password = "root";
+	private final String password = "0402";
 
 	private static DBUtil instance = new DBUtil();
 

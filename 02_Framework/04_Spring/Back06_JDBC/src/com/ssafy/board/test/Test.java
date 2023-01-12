@@ -8,17 +8,22 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import com.ssafy.board.model.dao.BoardDao;
 import com.ssafy.board.model.dao.BoardDaoImpl;
 import com.ssafy.board.model.dto.Board;
+import com.ssafy.board.model.service.BoardService;
 
 public class Test {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		//Spring컨테이너 빌드
 		ApplicationContext context = new GenericXmlApplicationContext("applicationContext.xml");
-		//boardDao빈 객체를 얻어와서
-		BoardDao boardDao = context.getBean("boardDao", BoardDao.class);
-		//원하는 기능을 호출
-		for(Board b : boardDao.selectAll())
+//		//boardDao빈 객체를 얻어와서
+//		BoardDao boardDao = context.getBean("boardDao", BoardDao.class);
+//		//원하는 기능을 호출
+//		for(Board b : boardDao.selectAll())
+//			System.out.println(b);
+		BoardService boardService =
+				context.getBean("boardService", BoardService.class);
+		boardService.readBoard(2);
+		for(Board b : boardService.getBoardList())
 			System.out.println(b);
-		
 		
 //		BoardDao dao = BoardDaoImpl.getInstance();
 //		

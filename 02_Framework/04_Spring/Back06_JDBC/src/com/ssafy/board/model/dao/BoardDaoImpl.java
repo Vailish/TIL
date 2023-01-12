@@ -9,16 +9,20 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.activation.DataSource;
+
 import com.ssafy.board.model.dto.Board;
 import com.ssafy.board.util.DBUtil;
 
 public class BoardDaoImpl implements BoardDao {
 	// 만들어진 DBUtil 들고오기
-	private final DBUtil util = DBUtil.getInstance();
+//	private final DBUtil util = DBUtil.getInstance();
+	private DataSource ds;
 
-	private static BoardDaoImpl instance = new BoardDaoImpl();
+//	private static BoardDaoImpl instance = new BoardDaoImpl();
 
-	private BoardDaoImpl() {
+	private BoardDaoImpl(DataSource ds) {
+		this.ds = ds;
 	}
 
 	public static BoardDaoImpl getInstance() {
@@ -35,7 +39,8 @@ public class BoardDaoImpl implements BoardDao {
 		
 		List<Board> list = new ArrayList<>();
 		try {
-			conn = util.getConnection();
+//			conn = util.getConnection();
+			conn = ds.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			
@@ -53,7 +58,8 @@ public class BoardDaoImpl implements BoardDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			util.close(rs, stmt, conn);
+//			util.close(rs, stmt, conn);
+			
 		}
 		return list;
 	}
@@ -69,7 +75,8 @@ public class BoardDaoImpl implements BoardDao {
 		Board board = new Board();
 		
 		try {
-			conn = util.getConnection();
+//			conn = util.getConnection();
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, id);
@@ -85,7 +92,7 @@ public class BoardDaoImpl implements BoardDao {
 				board.setRegDate(rs.getString(6));
 			}
 		}finally {
-			util.close(conn, pstmt, rs);
+//			util.close(conn, pstmt, rs);
 		}
 		
 		return board;
@@ -101,7 +108,7 @@ public class BoardDaoImpl implements BoardDao {
 		PreparedStatement pstmt = null;
 
 		try {
-			conn = util.getConnection();
+//			conn = util.getConnection();
 			// autocommit 해제
 			conn.setAutoCommit(false);
 
@@ -121,7 +128,7 @@ public class BoardDaoImpl implements BoardDao {
 //			conn.rollback();
 //		}
 		finally {
-			util.close(pstmt, conn);
+//			util.close(pstmt, conn);
 		}
 
 	}
@@ -152,7 +159,8 @@ public class BoardDaoImpl implements BoardDao {
 		PreparedStatement pstmt = null;
 		
 		try {
-			conn = util.getConnection();
+//			conn = util.getConnection();
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, board.getTitle());
@@ -161,7 +169,7 @@ public class BoardDaoImpl implements BoardDao {
 			
 			pstmt.executeUpdate();
 		}finally {
-			util.close(pstmt, conn);
+//			util.close(pstmt, conn);
 		}
 	}
 
@@ -172,14 +180,15 @@ public class BoardDaoImpl implements BoardDao {
 		PreparedStatement pstmt = null;
 		
 		try {
-			conn = util.getConnection();
+//			conn = util.getConnection();
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, id);
 			
 			pstmt.executeUpdate();
 		}finally {
-			util.close(pstmt, conn);
+//			util.close(pstmt, conn);
 		}
 	}
 
