@@ -1,4 +1,4 @@
-package com.vailish.dto;
+package com.vailish.api.request;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
