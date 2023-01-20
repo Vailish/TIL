@@ -1,10 +1,10 @@
-package com.vailish.hello;
+package com.vailish.pt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HelloSpringBoot2ApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
