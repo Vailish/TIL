@@ -15,6 +15,18 @@ Calendar cal=Calendar.getInstance();	//getInstance()로 객체 생성
     	System.out.println("현재 시간 "+cal.get(Calendar.AM_PM)+":"+cal.get(Calendar.MINUTE)+":"+cal.get(Calendar.SECOND));
     	System.out.println("이번 주는 일년 중 "+cal.get(Calendar.WEEK_OF_YEAR)+"번째 주");
 ```
+- set(int year, int month, int date)
+	- 초까지 설정가능
+	- `(int year, int month, int date, int hourOfDay, int minute, int second)`
+```java
+public final void set(int year, int month, int date)
+    {
+        set(YEAR, year);
+        set(MONTH, month);
+        set(DATE, date);
+    }
+
+```
 
 ## 참고
 - [블로그 - [자바] CALENDAR 클래스의 기본 설명과 여러 예제 모음](https://reakwon.tistory.com/190)
