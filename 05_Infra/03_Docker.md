@@ -33,6 +33,16 @@ docker rename [컨테이너이름] [변경할이름]
 $ docker run --name frontend -d -p 3000:3000 frontend
 ```
 
+- 컨테이너 접속
+```bash
+docker exec -it mysql-container bash
+```
+
+- mysql 컨테이너 실행
+```bash
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=root -d -p 3306:3307 mysql
+```
+
 ## Docker를 이용한 배포
 - [Docker-Spring-프로젝트를-Docker를-이용해서-배포해봅시다](https://velog.io/@18k7102dy/Docker-Spring-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A5%BC-Docker%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4%EC%84%9C-%EB%B0%B0%ED%8F%AC%ED%95%B4%EB%B4%85%EC%8B%9C%EB%8B%A4)
 
